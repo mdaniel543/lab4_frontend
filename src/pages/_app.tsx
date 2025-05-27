@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import ReactGA from "react-ga4";
 
-const GA_MEASUREMENT_ID = "G-11B0D4L100"; // Reemplaza con tu ID de medición de GA4
+const GA_MEASUREMENT_ID = "G-11B0D4L100";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();

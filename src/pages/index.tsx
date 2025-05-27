@@ -15,7 +15,7 @@ import {
 
 /* ===== Modelo TS ===== */
 interface User {
-  id: string;
+  id: number;
   nombre: string;
   email: string;
 }

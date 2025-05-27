@@ -61,7 +61,10 @@ export default function UsersPage() {
   /* submit del formulario */
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("Enviando formulario:", form);
+    if (!validateFields()) {
+      alert("Por favor, completa todos los campos requeridos.");
+      return;
+    }
     setLoading(true);
     try {
       await createUser();
@@ -70,6 +73,11 @@ export default function UsersPage() {
       setLoading(false);
     }
   };
+
+  const validateFields = () => {
+    // Validación simple: nombre y email no deben estar vacíos
+    return form.nombre.trim() !== "" && form.email.trim() !== "";
+  }
 
   /* ---------- UI ---------- */
   return (
